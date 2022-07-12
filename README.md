@@ -14,7 +14,7 @@ cp .env.example .env
 And run the initial migrations and seeders.
 
 ```
-php artisan migrate --seed 
+php artisan migrate 
 ```
 
 ## Route Lists
