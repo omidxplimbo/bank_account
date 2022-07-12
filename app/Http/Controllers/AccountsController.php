@@ -17,7 +17,7 @@ class AccountsController extends Controller
         try {
             return Account::create($payload);
         } catch (\Exception $exception) {
-            throw new HttpResponseException(response()->json($exception->getMessage(), 422));
+            throw new HttpResponseException(response()->json($exception->getMessage(), 501));
         }
     }
 
@@ -27,7 +27,7 @@ class AccountsController extends Controller
         if (!$account){
             return Response::json([
                 'result'=>'Account not found!'
-            ]);
+            ],404);
         }
         return $account;
     }
@@ -38,7 +38,7 @@ class AccountsController extends Controller
         if (!$account){
             return Response::json([
                 'result'=>'Account not found!'
-            ]);
+            ],404);
         }
         return $account;
     }
